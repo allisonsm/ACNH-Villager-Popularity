@@ -1,7 +1,7 @@
 ## Table of Contents
 
-- [1.1 Cleaning: Creating Tables and Headers](/Cleaning.md#1.1-Creating-Tables-and-Headers)
-- [1.2 Checking for NULL Values](/Cleaning.md#1.2-Checking-for-NULL-Values)
+- [1.1 Cleaning: Creating Tables and Headers](/Cleaning.md#11-Creating-Tables-and-Headers)
+- [1.2 Checking for NULL Values](/Cleaning.md#12-Checking-for-NULL-Values)
 
 ## 1.1 Creating Tables and Headers
 
