@@ -225,3 +225,43 @@ ELSE birthday_day
 END  
 WHERE birthday IS  NOT  NULL;
 ```
+```
+-- Adding a column to turn our month names “MMM” to MM - keeping as a string to learn how to CONCAT two strings as a date
+ALTER  TABLE  `ACNH_Villager_Project.VillagerInfo`  
+ADD  COLUMN birthday_mm STRING;
+```
+```
+UPDATE  `ACNH_Villager_Project.VillagerInfo`  
+SET birthday_mm =  
+CASE  
+WHEN birthday_month = 'Jan'  THEN  '01'  
+WHEN birthday_month = 'Feb'  THEN  '02'  
+WHEN birthday_month = 'Mar'  THEN  '03'  
+WHEN birthday_month = 'Apr'  THEN  '04'  
+WHEN birthday_month = 'May'  THEN  '05'  
+WHEN birthday_month = 'Jun'  THEN  '06'  
+WHEN birthday_month = 'Jul'  THEN  '07'  
+WHEN birthday_month = 'Aug'  THEN  '08'  
+WHEN birthday_month = 'Sep'  THEN  '09'  
+WHEN birthday_month = 'Oct'  THEN  '10'  
+WHEN birthday_month = 'Nov'  THEN  '11'  
+WHEN birthday_month = 'Dec'  THEN  '12'  
+ELSE  NULL  
+END  
+WHERE birthday IS  NOT  NULL;
+```
+```
+SELECT DATE(2023, CAST(birthday_mm AS INT64), CAST(birthday_day AS INT64)) AS birthday_date  
+FROM  `ACNH_Villager_Project.VillagerInfo`;
+```
+```
+ALTER  TABLE  `ACNH_Villager_Project.VillagerInfo`  
+ADD  COLUMN birthday_date DATE;
+```
+```
+UPDATE`ACNH_Villager_Project.VillagerInfo`  
+SET birthday_date =  
+DATE(2023, CAST(birthday_mm AS INT64), CAST(birthday_day AS INT64))  
+WHERE birthday IS  NOT  NULL;
+--SUCCESS! Our birthday has now been added as date for us to analyze
+```
