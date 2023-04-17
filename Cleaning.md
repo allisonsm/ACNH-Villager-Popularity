@@ -2,6 +2,7 @@
 
 - [1.1 Cleaning: Creating Tables and Headers](/Cleaning.md#11-Creating-Tables-and-Headers)
 - [1.2 Checking for NULL Values](/Cleaning.md#12-Checking-for-NULL-Values)
+- [1.3 Cleaning: Duplicates & Villager Count](/Cleaning.md#13-Duplicates-&-Villager-Count)
 
 ## 1.1 Creating Tables and Headers
 
