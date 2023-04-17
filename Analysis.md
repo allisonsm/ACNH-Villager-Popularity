@@ -3,7 +3,7 @@
 ## Table of Contents
 
  - [Goal 1A: Are there more male or female villagers?](Analysis.md#goal-1a-are-there-more-male-or-female-villagers)
- - [Goals 1B: Which villager gender is more popular?](Analysis.md#goals-1b-which-villager-gender-is-more-popular)
+ - [Goal 1B: Which villager gender is more popular?](Analysis.md#goals-1b-which-villager-gender-is-more-popular)
  - [Goal 2A: How many villagers are there for each personality?](nalysis.md#goal-2a-how-many-villagers-are-there-for-each-personality)
  - [Goal 2B: Which personality type is the most/least popular?](Analysis.md#goal-2b-which-personality-type-is-the-mostleast-popular)
  - [Goal 3A: How many villagers are there per animal type?](Analysis.md#goal-3a-how-many-villagers-are-there-per-animal-type)
@@ -25,7 +25,7 @@ GROUP  BY gender
 ORDER  BY  COUNT(i.villager_name) DESC;
 ```
 
-## Goals 1B: Which villager gender is more popular?
+## Goal 1B: Which villager gender is more popular?
 ```
 SELECT gender, ROUND(AVG(total_rank), 0) as avg_rank  
 FROM  `ACNH_Villager_Project.VillagerInfo`  AS i  
