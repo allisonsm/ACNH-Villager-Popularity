@@ -265,3 +265,34 @@ DATE(2023, CAST(birthday_mm AS INT64), CAST(birthday_day AS INT64))
 WHERE birthday IS  NOT  NULL;
 --SUCCESS! Our birthday has now been added as date for us to analyze
 ```
+Below:
+ - Creating a column of each villager’s Zodiac sign
+ -  At each tier, the rank starts over at 1, so we're creating a column for the total, overall rank of all villagers
+```
+**WITH VillagerBirthday AS (SELECT villager_name, tier, rank, birthday_date, CAST(birthday_mm AS INT64) AS monthint, CAST(birthday_day AS INT64) AS dayint  
+FROM  `ACNH_Villager_Project.VillagerInfo`  as i  
+JOIN  `ACNH_Villager_Project.VillagerPopularity`  AS p  
+ON i.villager_name = p.name  
+ORDER  BY villager_name)  
+  
+SELECT i.villager_name, b.tier, b.rank, ROW_NUMBER() OVER(ORDER  BY  tier  ASC, rank  ASC) AS total_rank, b.birthday_date,  
+CASE  
+WHEN (monthint = 03  AND dayint >=21) OR (monthint = 04  AND dayint <=19) THEN  'Aries'  
+WHEN (monthint = 4  AND dayint >= 20) OR (monthint = 5  AND dayint <= 20) THEN  'Taurus'  
+WHEN (monthint = 5  AND dayint >= 21) OR (monthint = 6  AND dayint <= 20) THEN  'Gemini'  
+WHEN (monthint = 6  AND dayint >= 21) OR (monthint = 7  AND dayint <= 20) THEN  'Cancer'  
+WHEN (monthint = 7  AND dayint >= 21) OR (monthint = 8  AND dayint <= 20) THEN  'Leo'  
+WHEN (monthint = 8  AND dayint >= 21) OR (monthint = 9  AND dayint <= 20) THEN  'Virgo'  
+WHEN (monthint = 9  AND dayint >= 21) OR (monthint = 10  AND dayint <= 20) THEN  'Libra'  
+WHEN (monthint = 10  AND dayint >= 21) OR (monthint = 11  AND dayint <= 20) THEN  'Scorpio'  
+WHEN (monthint = 11  AND dayint >= 21) OR (monthint = 12  AND dayint <= 20) THEN  'Sagittarius'  
+WHEN (monthint = 12  AND dayint >= 21) OR (monthint = 1  AND dayint <= 20) THEN  'Capricorn'  
+WHEN (monthint = 1  AND dayint >= 21) OR (monthint = 2  AND dayint <= 20) THEN  'Aquarius'  
+WHEN (monthint = 2  AND dayint >= 21) OR (monthint = 3  AND dayint <= 20) THEN  'Pisces'  
+ELSE  'na'  
+END  AS zodiac_sign  
+FROM  `ACNH_Villager_Project.VillagerInfo`  AS i  
+INNER  JOIN VillagerBirthday AS b  
+ON i.villager_name = b.villager_name  
+ORDER  BY  tier  ASC, rank  ASC**
+```
