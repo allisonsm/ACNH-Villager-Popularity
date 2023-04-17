@@ -24,7 +24,7 @@ ON i.villager_name = p.name
 GROUP  BY gender  
 ORDER  BY  COUNT(i.villager_name) DESC;
 ```
-[Villager Gender](/villager_count.svg)
+![Villager Gender](/villager_count.svg)
 
 ## Goal 1B: Which villager gender is more popular?
 ```
