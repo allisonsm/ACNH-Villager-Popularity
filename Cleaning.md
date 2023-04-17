@@ -2,7 +2,7 @@
 
  - [1.1 Cleaning: Creating Tables and Headers](/Cleaning.md#1.1-Cleaning:-Creating-Tables-and-Headers)
 
-## 1.1 Cleaning: Creating Tables and Headers
+## 1.1 Creating Tables and Headers
 
 Load VillagerInfo and VillagerPopularity tables into BigQuery for cleaning and analysis. The VillagerInfo table loaded would not detect the header row. I used a preview spreadsheet to view the column headers, then tried to locate them in SQL:
 ```
@@ -34,7 +34,7 @@ string_field_14 to furniture;
 string_field_15 to filename;  
 string_field_16 to uniqueid;
 ```
-## 1.2 Cleaning: Checking for NULL Values
+## 1.2 Checking for NULL Values
 
 ```
 SELECT *  
@@ -67,7 +67,7 @@ OR  name  IS  NULL;
 -- Both queries returned no results
 ```
 
-## 1.3 Cleaning: Duplicates & Villager Count
+## 1.3 Duplicates & Villager Count
 ```
 SELECT  COUNT (villager_name)  
 FROM  `ACNH_Villager_Project.VillagerInfo`;
@@ -198,7 +198,7 @@ ON p.name = i.villager_name
 ORDER  BY  name  ASC;  
 --Since we are running an INNER JOIN, any records with NULL values in the VillagerINFO table are not included
 ```
-## 1.4 Cleaning: Transforming Data - Birthday Date
+## 1.4 Transforming Data - Birthday Date
 ```
 ALTER  TABLE  `ACNH_Villager_Project.VillagerInfo`  
 ADD  COLUMN birthday_day STRING;
