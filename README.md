@@ -20,6 +20,8 @@ The Google Data Analytics Certificate course features a dataset for the Nintendo
 3.  What is the most popular animal type? How many villagers are there per animal type?
     
 4.  What is the most/least popular Zodiac sign of the villagers?
+
+5.  What is most/least popular villager combination by gender, personality, animal, and Zodiac sign?
     
 **Summary of SQL Commands/Functions Used:**
 
