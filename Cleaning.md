@@ -195,3 +195,33 @@ ON p.name = i.villager_name
 ORDER  BY  name  ASC;  
 --Since we are running an INNER JOIN, any records with NULL values in the VillagerINFO table are not included
 ```
+## 1.4 Cleaning: Transforming Data - Birthday Date
+```
+ALTER  TABLE  `ACNH_Villager_Project.VillagerInfo`  
+ADD  COLUMN birthday_day STRING;
+```
+```
+ALTER  TABLE  `ACNH_Villager_Project.VillagerInfo`  
+ADD  COLUMN birthday_month STRING;
+```
+```
+UPDATE  `ACNH_Villager_Project.VillagerInfo`  
+SET birthday_day = TRIM(SUBSTRING(birthday, 1, 2), '-')  
+WHERE birthday IS  NOT  NULL;  
+```
+```
+UPDATE  `ACNH_Villager_Project.VillagerInfo`  
+SET birthday_month = TRIM(SUBSTRING(birthday, 3, 4), '-')  
+WHERE birthday IS  NOT  NULL;
+```
+```
+--Our birthday_day column has records with days in both D and DD format, to fix:
+
+UPDATE  `ACNH_Villager_Project.VillagerInfo`  
+SET birthday_day =  
+CASE  
+WHEN  LENGTH(birthday_day) = 1  THEN  CONCAT('0', birthday_day)  
+ELSE birthday_day  
+END  
+WHERE birthday IS  NOT  NULL;
+```
