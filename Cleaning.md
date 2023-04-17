@@ -148,3 +148,50 @@ WHERE villager_name LIKE  "%Ren%"
 OR  name  LIKE  "%Ren%"  
 ORDER  BY  name  ASC;
 ```
+```
+-- Updating Renée in Popularity table  
+UPDATE  `ACNH_Villager_Project.VillagerPopularity`  
+SET  name = "Renée"  
+WHERE  name = "Renee";
+```
+```
+-- Searching for duplicate "O'Hare"  
+SELECT  name, villager_name, tier, rank, animal  
+FROM  `ACNH_Villager_Project.VillagerPopularity`  AS p  
+FULL  OUTER  JOIN  `ACNH_Villager_Project.VillagerInfo`  AS i  
+ON p.name = i.villager_name  
+WHERE villager_name LIKE  "%Hare%"  
+OR  name  LIKE  "%Hare%"  
+ORDER  BY  name  ASC;
+```
+ ```
+-- Updating O'Hare in Popularity table  
+UPDATE  `ACNH_Villager_Project.VillagerPopularity`  
+SET  name = "O'Hare"  
+WHERE  name = "OHare";
+```
+```
+-- Searching for "Wart Jr." duplicate  
+SELECT  name, villager_name, tier, rank, animal  
+FROM  `ACNH_Villager_Project.VillagerPopularity`  AS p  
+FULL  OUTER  JOIN  `ACNH_Villager_Project.VillagerInfo`  AS i  
+ON p.name = i.villager_name  
+WHERE villager_name LIKE  "%Wart%"  
+OR  name  LIKE  "%Wart%"  
+ORDER  BY  name  ASC;
+```
+```
+-- Updating Wart Jr. in Popularity table  
+UPDATE  `ACNH_Villager_Project.VillagerPopularity`  
+SET  name = "Wart Jr."  
+WHERE  name = "WartJr";
+```
+There were **5 records** in the VillagerInfo table that had a match in the VillagerPopularity table that weren’t recognized due to differences in the data input. Two of our villagers (Buck and Spork, had nicknames in the VillagerPopularity table. Three of our villagers (Renée, O’Hare, and Wart Jr.) were in the VillagerPopularity table, but without the appropriate symbols and spelling in their names. After updating the VillagerPopularity table, there are **22 records with NULL values** in our VillagerInfo table. For the purposes of this project, I will *ignore* these villagers going forward as there is insufficient data.
+```
+SELECT  name, villager_name, tier, rank, animal  
+FROM  `ACNH_Villager_Project.VillagerPopularity`  AS p  
+INNER  JOIN  `ACNH_Villager_Project.VillagerInfo`  AS i  
+ON p.name = i.villager_name  
+ORDER  BY  name  ASC;  
+--Since we are running an INNER JOIN, any records with NULL values in the VillagerINFO table are not included
+```
