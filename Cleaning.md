@@ -296,3 +296,58 @@ INNER  JOIN VillagerBirthday AS b
 ON i.villager_name = b.villager_name  
 ORDER  BY  tier  ASC, rank  ASC**
 ```
+```
+ALTER  TABLE  `ACNH_Villager_Project.VillagerPopularity`  
+ADD  COLUMN total_rank INT64;
+```
+```
+UPDATE `ACNH_Villager_Project.VillagerPopularity` p  
+SET p.total_rank = t.rank  
+FROM (  
+SELECT name, ROW_NUMBER() OVER(ORDER BY tier ASC, rank ASC) as rank  
+FROM `ACNH_Villager_Project.VillagerPopularity` AS p  
+JOIN `ACNH_Villager_Project.VillagerInfo` AS i  
+ON p.name = i.villager_name  
+WHERE i.villager_name IS NOT NULL  
+) t  
+WHERE p.name = t.name;
+```
+```
+ALTER  TABLE  `ACNH_Villager_Project.VillagerInfo`  
+ADD  COLUMN zodiac_sign STRING;
+```
+```
+ALTER  TABLE  `ACNH_Villager_Project.VillagerInfo`  
+ADD  COLUMN monthint INT64;  
+ALTER  TABLE  `ACNH_Villager_Project.VillagerInfo`  
+ADD  COLUMN dayint INT64;
+```
+```
+UPDATE  `ACNH_Villager_Project.VillagerInfo`  
+SET monthint = CAST(birthday_mm AS INT64)  
+WHERE birthday_mm IS  NOT  NULL;  
+```
+```
+UPDATE  `ACNH_Villager_Project.VillagerInfo`  
+SET dayint = CAST(birthday_day AS INT64)  
+WHERE birthday_day IS  NOT  NULL;
+```
+```
+UPDATE  `ACNH_Villager_Project.VillagerInfo`  
+SET zodiac_sign = CASE  
+WHEN (monthint = 03  AND dayint >=21) OR (monthint = 04  AND dayint <=19) THEN  'Aries'  
+WHEN (monthint = 4  AND dayint >= 20) OR (monthint = 5  AND dayint <= 20) THEN  'Taurus'  
+WHEN (monthint = 5  AND dayint >= 21) OR (monthint = 6  AND dayint <= 20) THEN  'Gemini'  
+WHEN (monthint = 6  AND dayint >= 21) OR (monthint = 7  AND dayint <= 20) THEN  'Cancer'  
+WHEN (monthint = 7  AND dayint >= 21) OR (monthint = 8  AND dayint <= 20) THEN  'Leo'  
+WHEN (monthint = 8  AND dayint >= 21) OR (monthint = 9  AND dayint <= 20) THEN  'Virgo'  
+WHEN (monthint = 9  AND dayint >= 21) OR (monthint = 10  AND dayint <= 20) THEN  'Libra'  
+WHEN (monthint = 10  AND dayint >= 21) OR (monthint = 11  AND dayint <= 20) THEN  'Scorpio'  
+WHEN (monthint = 11  AND dayint >= 21) OR (monthint = 12  AND dayint <= 20) THEN  'Sagittarius'  
+WHEN (monthint = 12  AND dayint >= 21) OR (monthint = 1  AND dayint <= 20) THEN  'Capricorn'  
+WHEN (monthint = 1  AND dayint >= 21) OR (monthint = 2  AND dayint <= 20) THEN  'Aquarius'  
+WHEN (monthint = 2  AND dayint >= 21) OR (monthint = 3  AND dayint <= 20) THEN  'Pisces'  
+ELSE  'na'  
+END  
+WHERE monthint IS  NOT  NULL  AND dayint IS  NOT  NULL;
+```
