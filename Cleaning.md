@@ -1,3 +1,6 @@
+## Table of Contents
+
+ - [1.1 Cleaning: Creating Tables and Headers](/Cleaning.md#1.1-Cleaning:-Creating-Tables-and-Headers)
 
 ## 1.1 Cleaning: Creating Tables and Headers
 
