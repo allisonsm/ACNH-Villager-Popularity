@@ -79,6 +79,7 @@ ON i.villager_name = p.name
 GROUP  BY animal  
 ORDER  BY avg_rank ASC;
 ```
+![Animal Average Rank](animal_average_rank.svg)
 ## Goal 4A: What is the most/least common zodiac sign of the villagers?
 ```
 SELECT zodiac_sign, COUNT (zodiac_sign) AS zodiac_count  
