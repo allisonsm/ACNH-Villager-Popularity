@@ -26,6 +26,8 @@ ORDER  BY  COUNT(i.villager_name) DESC;
 ```
 ![Villager Gender](/villager_count.svg)
 
+There are more *male* villagers than female villagers.
+
 ## Goal 1B: Which villager gender is more popular?
 ```
 SELECT gender, ROUND(AVG(total_rank), 0) as avg_rank  
@@ -35,7 +37,8 @@ ON i.villager_name = p.name
 GROUP  BY gender  
 ORDER  BY avg_rank DESC;
 ```
-![Average Gender Popularity](average_gender_popularity.svg)
+![Average Gender Popularity](average_gender_popularity.svg)  
+*Female* villagers are more popular than male villagers. A lower rank number (like 1) means the category is more popular!
 
 ## Goal 2A: How many villagers are there for each personality?
 ```
@@ -46,7 +49,16 @@ ON i.villager_name = p.name
 GROUP  BY gender, personality  
 ORDER  BY gender ASC, personality ASC;
 ```
-![Villager Personality Count](villager_personality_count.svg)
+![Villager Personality Count](villager_personality_count.svg)  
+The most common personality types:
+
+ - 59 out of the 187 female villagers are *Normal* 
+ - 60 out of the 207 male villagers are *Lazy*
+
+The rarest personality types:
+
+ - Only 24 out of the 187 female villagers are *Big Sister*
+ - Only 34 out of the 207 male villagers are *Smug*
 
 ## Goal 2B: Which personality type is the most/least popular?
 ```
@@ -57,7 +69,17 @@ ON i.villager_name = p.name
 GROUP  BY gender, personality  
 ORDER  BY gender ASC, personality ASC;
 ```
-![Personality Average Rank](personality_average_rank.svg)
+![Personality Average Rank](personality_average_rank.svg)  
+The most popular personality types are: 
+ 1. *Big Sister* - female with an average rank of 151.08
+ 2. *Normal* - female with an average rank of 151.42
+ 3. *Peppy* - female with an average rank of 157.1
+
+The least popular personality types are:
+
+ 1. *Snooty* - female with an average rank of 244.56
+ 2. *Cranky* - male with an average rank of 237.89
+ 3. *Jock* - male with an average rank of 223.38
 
 ## Goal 3A: How many villagers are there per animal type?
 ```
@@ -70,6 +92,17 @@ ORDER  BY animal ASC;
 ```
 ![Animal Count](animal_count.svg)
 
+The most common animals are: 
+ 1. *Cats* - 23 villagers
+ 2. *Rabbit* - 20 villagers
+ 3. *Frog* & *Squirrel* - tied, with 18 villagers each
+
+The rarest animals are:
+
+ 1. *Octopus* - 3 villagers
+ 2. *Cow* - 4 villagers
+ 3. *Rhino* & *Bull* - tied, with 6 villagers each
+
 ## Goal 3B: What is the most/least popular animal type?
 ```
 SELECT animal, ROUND(AVG(total_rank), 2) as avg_rank  
@@ -77,9 +110,20 @@ FROM  `ACNH_Villager_Project.VillagerInfo`  AS i
 JOIN  `ACNH_Villager_Project.VillagerPopularity`  AS p  
 ON i.villager_name = p.name  
 GROUP  BY animal  
-ORDER  BY avg_rank ASC;
+ORDER  BY avg_rank ASC;  
 ```
-![Animal Average Rank](animal_average_rank.svg)
+![Animal Average Rank](animal_average_rank.svg)  
+The most popular animals are: 
+ 1. *Octopus*
+ 2. *Deer*
+ 3. *Wolf*
+
+The least popular animals are:
+
+ 1. *Gorilla*
+ 2. *Pig*
+ 3. *Mouse*
+
 ## Goal 4A: What is the most/least common zodiac sign of the villagers?
 ```
 SELECT zodiac_sign, COUNT (zodiac_sign) AS zodiac_count  
@@ -89,7 +133,18 @@ ON i.villager_name = p.name
 GROUP  BY zodiac_sign  
 ORDER  BY zodiac_sign ASC;
 ```
-![Zodiac Sign - Count](zodiac_sign_count.svg)
+![Zodiac Sign - Count](zodiac_sign_count.svg)  
+
+The most common Zodiac signs are: 
+ 1. *Leo* - 38 villagers
+ 2. *Libra* - 35 villagers
+ 3. *Virgo* - 34 villagers
+
+The least common Zodiac signs are:
+
+ 1. *Pisces* - 28 villagers
+ 2. *Aries*, *Capricorn*, & *Taurus* - 31 villagers each
+ 3. *Cancer* & *Scorpio* - 32 villagers each
 
 ## Goal 4B: Which zodiac sign is the most/least popular?
 ```
