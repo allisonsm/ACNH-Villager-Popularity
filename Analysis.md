@@ -156,7 +156,19 @@ ON i.villager_name = p.name
 GROUP  BY zodiac_sign  
 ORDER  BY avg_rank ASC;
 ```
-![Zodiac Sign - Rank](zodiac_sign_rank.svg)
+![Zodiac Sign - Rank](zodiac_sign_rank.svg)  
+
+The most popular Zodiac signs are: 
+ 1. *Pisces* - average rank of 152
+ 2. *Aquarius* - average rank of 159
+ 3. *Gemini* - average rank of 181
+
+The least popular Zodiac signs are:
+
+ 1. *Scorpio* - average rank of 240
+ 2. *Leo* - average rank of 227
+ 3. *Sagittarius* - average rank of 208
+
 ## Goal 5A: What is the most/least popular villager by gender, personality, animal, and zodiac sign?
 ```
 -- Google Sheets Formula format used to pull highest and lowest avg_rank from other sheets
