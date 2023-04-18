@@ -36,6 +36,11 @@ The Google Data Analytics Certificate course features a dataset for the Nintendo
 -   CASE statements
     
 -   GROUP BY / ORDER BY
+ 
+**Tools Used:**
+-   SQLite - RDMBS
+-   BigQuery
+-   Google Sheets/Excel
 
 ## Project Files:
 -   [Part 1: Preparing, Cleaning, & Transforming](Cleaning.md)
