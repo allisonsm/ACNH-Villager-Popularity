@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The Google Data Analytics Certificate course features a dataset for the Nintendo Switch game Animal Crossing New Horizons. During the height of the pandemic, I enjoyed collecting my favorite villagers in the game, and quickly discovered there were some villagers players loved more than others. Since I’m in the process of learning SQL, I thought it would be fun to use the tool to see if there were specific characteristics that made villagers more popular with the ACNH player community. A few users on Kaggle have created similar projects using Python, but for this project I’ll be putting my SQL skills to the test.
+The Google Data Analytics Certificate course features a dataset for the Nintendo Switch game Animal Crossing New Horizons. During the height of the pandemic, I enjoyed collecting my favorite villagers in the game, and quickly discovered there were some villagers players loved more than others. Since I’m in the process of learning SQL, I thought it would be fun to use the tool to see if there were specific characteristics that made villagers more popular with the ACNH player community. A few Kaggle users have created similar projects using Python, but for this project I’ll be putting my SQL skills to the test.
 
 **Datasets:**
 
