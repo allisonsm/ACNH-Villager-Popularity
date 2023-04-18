@@ -35,6 +35,8 @@ ON i.villager_name = p.name
 GROUP  BY gender  
 ORDER  BY avg_rank DESC;
 ```
+![Average Gender Popularity](average_gender_popularity.svg)
+
 ## Goal 2A: How many villagers are there for each personality?
 ```
 SELECT gender, personality, COUNT (personality) AS personality_count  
