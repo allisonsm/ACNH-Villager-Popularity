@@ -134,7 +134,7 @@ GROUP  BY zodiac_sign
 ORDER  BY zodiac_sign ASC;
 ``` 
 
-![Zodiac Sign - Count](github.com/allisonsm/ACNH-Villager-Popularity/blob/main/zodiac_sign%20_count.svg)
+![Zodiac Sign - Count](zodiac_sign%20_count.svg)
 
 The most common Zodiac signs are: 
  1. *Leo* - 38 villagers
