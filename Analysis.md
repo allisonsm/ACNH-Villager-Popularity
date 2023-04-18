@@ -68,6 +68,8 @@ ON i.villager_name = p.name
 GROUP  BY animal  
 ORDER  BY animal ASC;
 ```
+![Animal Count](animal_count.svg)
+
 ## Goal 3B: What is the most/least popular animal type?
 ```
 SELECT animal, ROUND(AVG(total_rank), 2) as avg_rank  
