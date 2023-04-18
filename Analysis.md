@@ -9,7 +9,7 @@
  - [Goal 3A: How many villagers are there per animal type?](Analysis.md#goal-3a-how-many-villagers-are-there-per-animal-type)
  - [Goal 3B: What is the most/least popular animal type?](Analysis.md#goal-3b-what-is-the-mostleast-popular-animal-type)
  - [Goal 4A: What is the most/least common zodiac sign of the villagers?](Analysis.md#goal-4a-what-is-the-mostleast-common-zodiac-sign-of-the-villagers)
- - [Goal 4B: Which zodiac sign is most/least likely to be popular?](Analysis.md#goal-4b-which-zodiac-sign-is-mostleast-likely-to-be-popular)
+ - [Goal 4B: Which zodiac sign is the most/least popular?](Analysis.md#goal-4b-which-zodiac-sign-is-the-mostleast-popular)
  - [Goal 5A: *What is the most/least popular villager* by gender, personality, animal, and zodiac sign?](Analysis.md#goal-5a-what-is-the-mostleast-popular-villager-by-gender-personality-animal-and-zodiac-sign)
  - [Goal 5B: *What is the most/least popular combination* of gender, personality, animal, and zodiac sign?](Analysis.md#goal-5b-what-is-the-mostleast-popular-combination-of-gender-personality-animal-and-zodiac-sign)
 
@@ -91,7 +91,7 @@ ORDER  BY zodiac_sign ASC;
 ```
 ![Zodiac Sign - Count](zodiac_sign_count.svg)
 
-## Goal 4B: Which zodiac sign is most/least likely to be popular?
+## Goal 4B: Which zodiac sign is the most/least popular?
 ```
 SELECT zodiac_sign, ROUND(AVG(total_rank), 2) as avg_rank  
 FROM  `ACNH_Villager_Project.VillagerInfo`  AS i  
@@ -100,6 +100,7 @@ ON i.villager_name = p.name
 GROUP  BY zodiac_sign  
 ORDER  BY avg_rank ASC;
 ```
+![Zodiac Sign - Rank](zodiac_sign_rank.svg)
 ## Goal 5A: What is the most/least popular villager by gender, personality, animal, and zodiac sign?
 ```
 -- Google Sheets Formula format used to pull highest and lowest avg_rank from other sheets
