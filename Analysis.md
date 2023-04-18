@@ -106,6 +106,14 @@ ORDER  BY avg_rank ASC;
 -- Google Sheets Formula format used to pull highest and lowest avg_rank from other sheets
 =INDEX('1B: Gender Rank'!$A$2:$A,MATCH(MIN('1B: Gender Rank'!$B$2:$B),'1B: Gender Rank'!$B$2:$B,0))
 ```
+
+| Villager Attribute | Most Popular | Least Popular |
+|--------------------|--------------|---------------|
+| Gender             | Female       | Male          |
+| Personality        | Big Sister   | Snooty        |
+| Animal             | Octopus      | Gorilla       |
+| Zodiac Sign        | Pisces       | Scorpio       |
+
 ## Goal 5B: What is the most/least popular combination of gender, personality, animal, and zodiac sign?
 ```
 -- Grouping the data as needed
@@ -137,7 +145,10 @@ SELECT avg_rank, personality, animal, zodiac_sign
 FROM ranked_data  
 WHERE rank_asc = 1  OR rank_desc = 1;
 ```
-img
+| popularity rank | personality | animal | zodiac_sign |
+|-----------------|-------------|--------|-------------|
+| 391             | Snooty      | Goat   | Capricorn   |
+| 1               | Smug        | Cat    | Libra       |
 
 The **most popular** combination is a Male, Smug, Cat, Libra!
 The **least popular** combination is a Female, Snooty, Goat, Capricorn!
