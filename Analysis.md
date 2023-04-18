@@ -89,6 +89,8 @@ ON i.villager_name = p.name
 GROUP  BY zodiac_sign  
 ORDER  BY zodiac_sign ASC;
 ```
+![Zodiac Sign - Count](zodiac_sign_count.svg)
+
 ## Goal 4B: Which zodiac sign is most/least likely to be popular?
 ```
 SELECT zodiac_sign, ROUND(AVG(total_rank), 2) as avg_rank  
