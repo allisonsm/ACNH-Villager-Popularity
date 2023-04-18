@@ -12,6 +12,7 @@
  - [Goal 4B: Which zodiac sign is the most/least popular?](Analysis.md#goal-4b-which-zodiac-sign-is-the-mostleast-popular)
  - [Goal 5A: *What is the most/least popular villager* by gender, personality, animal, and zodiac sign?](Analysis.md#goal-5a-what-is-the-mostleast-popular-villager-by-gender-personality-animal-and-zodiac-sign)
  - [Goal 5B: *What is the most/least popular combination* of gender, personality, animal, and zodiac sign?](Analysis.md#goal-5b-what-is-the-mostleast-popular-combination-of-gender-personality-animal-and-zodiac-sign)
+ - [Conclusion](Analysis.md#conclusion)
 
 ## Goal 1A: Are there more male or female villagers?
 
