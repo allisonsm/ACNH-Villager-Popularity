@@ -57,6 +57,8 @@ ON i.villager_name = p.name
 GROUP  BY gender, personality  
 ORDER  BY gender ASC, personality ASC;
 ```
+![Personality Average Rank](personality_average_rank.svg)
+
 ## Goal 3A: How many villagers are there per animal type?
 ```
 SELECT animal, COUNT (animal) AS animal_count  
