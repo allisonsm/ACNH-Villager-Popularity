@@ -38,5 +38,5 @@ The Google Data Analytics Certificate course features a dataset for the Nintendo
 -   GROUP BY / ORDER BY
 
 ## Project Files:
--   [Preparing, Cleaning, & Transforming](Cleaning.md)
--   [SQL Analysis & Visualization](Analysis.md)
+-   [Part 1: Preparing, Cleaning, & Transforming](Cleaning.md)
+-   [Part 2: SQL Analysis & Visualization](Analysis.md)
