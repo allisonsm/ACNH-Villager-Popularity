@@ -180,9 +180,13 @@ The least popular Zodiac signs are:
 | Gender             | Female       | Male          |
 | Personality        | Big Sister   | Snooty        |
 | Animal             | Octopus      | Gorilla       |
-| Zodiac Sign        | Pisces       | Scorpio       |
+| Zodiac Sign        | Pisces       | Scorpio       |  
+
+We now know the most/least popular villager for each of our 4 attributes!  
+Just for fun, let's see if we can narrow down the most/least popular combination
 
 ## Goal 5B: What is the most/least popular combination of gender, personality, animal, and zodiac sign?
+
 ```
 -- Grouping the data as needed
 
@@ -220,3 +224,17 @@ WHERE rank_asc = 1  OR rank_desc = 1;
 
 The **most popular** combination is a Male, Smug, Cat, Libra!  
 The **least popular** combination is a Female, Snooty, Goat, Capricorn!
+  
+While this seems interesting, it doesn't tell us much more than our overall ranking. There are 391 combinations, which is only a few less than our total # of villager count. 
+
+## Conclusion
+
+From our analysis, we can determine certain attributes give a villager a higher chance of being popular within the ACNH community.
+  
+-   *Female* villagers are overall more likely to be popular. This rings true in our personality analysis, where we see *Big Sister*, *Normal*, and *Peppy* villagers are more likely to be popular. Female *Snooty* villagers, and male *Cranky* & *Jock* villagers are least likely to be popular.
+  
+-   The most popular animal is an *Octopus*, which is also the rarest animal. However, we cannot determine any further correlation between our top 3 most/least popoular animals and their rarity. *Deer* and *Wolf* animals are also likely to be popular, while *Gorilla*, *Pig*, and *Mouse* villagers are least likely to be popular.
+  
+-   *Leo* is the most common Zodiac sign, and *Pisces* is the least common sign. Interestingly, *Pisces* is also the most popular sign, with *Aquarius* at a close second. Additionally *Scorpio* and *Leo* are the least popular signs. This shows us there is some correlation between a Zodiac signs rarity and popularity.
+
+Going forward, I hope to further analyze this dataset to see what other attributes may contribute to a villager's popularity.
