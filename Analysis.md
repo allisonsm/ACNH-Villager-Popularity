@@ -150,5 +150,5 @@ WHERE rank_asc = 1  OR rank_desc = 1;
 | 391             | Snooty      | Goat   | Capricorn   |
 | 1               | Smug        | Cat    | Libra       |
 
-The **most popular** combination is a Male, Smug, Cat, Libra!
+The **most popular** combination is a Male, Smug, Cat, Libra!  
 The **least popular** combination is a Female, Snooty, Goat, Capricorn!
