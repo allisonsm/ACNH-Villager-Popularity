@@ -46,6 +46,8 @@ ON i.villager_name = p.name
 GROUP  BY gender, personality  
 ORDER  BY gender ASC, personality ASC;
 ```
+![Villager Personality Count](villager_personality_count.svg)
+
 ## Goal 2B: Which personality type is the most/least popular?
 ```
 SELECT gender, personality, ROUND(AVG(total_rank), 2) as avg_rank  
